@@ -1,0 +1,20 @@
+{
+  "name": "geo-api-demo",
+  "version": "1.0.0",
+  "description": "GEO Api Demp",
+  "scripts": {
+    "test": "npm run deploy",
+    "deploy": "webpack",
+    "start": "npm test"
+  },
+  "author": "Sharkbyteprojects",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "leaflet": "^1.6.0" 
+  }
+}
