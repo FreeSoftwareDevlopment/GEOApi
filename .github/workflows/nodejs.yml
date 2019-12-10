@@ -22,5 +22,6 @@ jobs:
         npm install
         npm ci
         npm test
+        git push origin master
       env:
         CI: true
