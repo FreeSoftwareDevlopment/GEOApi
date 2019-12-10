@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
+        echo: [NPM,SHARK]
 
     steps:
     - uses: actions/checkout@v1
@@ -19,13 +20,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build
       run: |
+        echo ${{matrix.echo}}
         npm install
         npm ci
         npm test
-        git config --global user.email "bot@github.com"
-        git config --global user.name "BOT SHARK"
-        git add .
-        git commit -m "Add DIST"
-        git push origin master
       env:
         CI: true
