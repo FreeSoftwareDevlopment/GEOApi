@@ -22,6 +22,8 @@ jobs:
         npm install
         npm ci
         npm test
+        git add .
+        git commit -m "Add DIST"
         git push origin master
       env:
         CI: true
