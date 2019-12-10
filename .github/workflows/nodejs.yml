@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-        echo: [NPM,SHARK]
+        files: [./dist,./src]
 
     steps:
     - uses: actions/checkout@v1
@@ -20,7 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build
       run: |
-        echo ${{matrix.echo}}
         npm install
         npm ci
         npm test
@@ -29,5 +28,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-         name: packedfiles
-         path: ./dist     
+         name: packedfiles ${{matrix.files}}
+         path: ${{matrix.files}}    
