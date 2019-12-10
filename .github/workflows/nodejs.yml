@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-        files: [./dist,./src]
+        files: [dist,src]
 
     steps:
     - uses: actions/checkout@v1
@@ -28,5 +28,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-         name: packedfiles ${{matrix.files}}
-         path: ${{matrix.files}}    
+         name: packedfiles-${{matrix.files}}
+         path: ./${{matrix.files}}    
