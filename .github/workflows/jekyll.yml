@@ -14,3 +14,10 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/. -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /. && jekyll build --future"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+    # Artifact name
+       name: Jekyll-Flow
+    # Directory containing files to upload
+       path: .
