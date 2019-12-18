@@ -3,7 +3,7 @@ name: WebPack
 on: [push]
 
 jobs:
- ${{matrix.files}}:
+ Webpack:
 
     runs-on: ubuntu-latest
 
