@@ -28,4 +28,9 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
          name: packedfiles-${{matrix.files}}
-         path: ./${{matrix.files}}    
+         path: ./${{matrix.files}}  
+    - name: Cache
+      uses: actions/cache@v1.0.3
+      with:
+         path: node_modules
+         key:  news
